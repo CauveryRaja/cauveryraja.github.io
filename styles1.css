@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.greeting text {
+    font-size: 50px;
+    stroke: #365fa0;
+    fill: transparent;
+    animation: stroke-animation 3s ease forwards;
+}
+
+.smiley {
+    stroke: #365fa0;
+    animation: stroke-animation 3s ease forwards;
+}
+
+.navigation-links {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navigation-links a {
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 50%;
+    border: 1px solid #689aeb;
+    color: #365fa0;
+    font-size: 26px;
+    margin: 20px;
+}
+
+@keyframes stroke-animation {
+    0% {
+        stroke-dasharray: 50%;
+        stroke-dashoffset: 50%;
+    }
+    90% {
+        fill: transparent;
+    }
+    100% {
+        fill: #365fa0;
+    }
+}
