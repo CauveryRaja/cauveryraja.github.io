@@ -31,7 +31,6 @@ svg text {
 
 .svg-smiley {
     margin-left: -50px;
-    /* stroke: rgba(72,138,204,1); */
     stroke: white;
     animation: fade-in 2s ease-in;
 }
@@ -46,12 +45,10 @@ svg text {
     text-decoration: none;
     padding: 15px;
     border-radius: 50%;
-    /* border: 1px solid #689aeb; */
-    /* color: #4871b3; */
     border: 1px solid rgb(204, 204, 204);
     color: rgb(212, 212, 212);
     font-size: 26px;
-    margin: 20px;
+    margin: 15px;
     opacity: 0;
     animation: slide-in 2s ease-in forwards;
 }
@@ -68,32 +65,30 @@ svg text {
     animation-delay: 0.6s;
 }
 
+.navigation-links a:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
 @keyframes stroke-animation {
     0%   {
-        /* stroke: rgb(98, 170, 241); */
         stroke: rgb(226, 226, 226);
 		stroke-dashoffset: 25%; 
-        stroke-dasharray: 0 50%; 
-        stroke-width: 1;
+        stroke-dasharray: 0 50%;
 	}
     50% {
         fill: transparent;
     }
 	70%  {
-        /* stroke: rgba(72,138,204,1); */
         stroke: rgb(226, 226, 226);
     }
 	80%  {
-        /* stroke: rgba(72,138,204,1);  */
         stroke: rgb(226, 226, 226);
-        stroke-width: 1; 
     }
 	100% {
-		/* fill: rgba(72,138,204,1); */
         fill: rgb(207, 206, 206);
+        stroke: rgb(226, 226, 226);
 		stroke-dashoffset: -25%; 
-        stroke-dasharray: 50% 0; 
-        stroke-width: 0;
+        stroke-dasharray: 50% 0;
 	}
 }
 
