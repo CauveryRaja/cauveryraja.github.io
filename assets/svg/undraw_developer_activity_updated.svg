@@ -1,5 +1,3 @@
-let developerElm = document.getElementsByClassName('developer-image')[0];
-developerElm.insertAdjacentHTML('beforeend', `
 <svg width="851" height="741" viewBox="0 0 851 741" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="undraw_developer_activity 1" clip-path="url(#clip0_1_36)">
 <path id="Vector" d="M762.878 385.54C762.989 477.209 727.556 565.352 664.028 631.44C660.198 635.45 656.265 639.363 652.228 643.18C646.078 649.03 639.721 654.653 633.158 660.05C571.76 710.634 495.112 739.059 415.578 740.74C412.928 740.8 410.268 740.83 407.598 740.83C344.168 740.83 264.388 706.95 191.988 660.05C185.998 656.17 180.061 652.2 174.178 648.14C171.428 646.26 168.691 644.353 165.968 642.42C138.044 622.702 111.539 601.049 86.648 577.62C70.3509 562.325 55.0684 545.983 40.898 528.7C-14.732 460.08 -27.002 398.25 52.308 385.54C61.698 384.04 70.8113 382.436 79.648 380.73C92.4481 378.27 104.698 375.613 116.398 372.76C132.158 368.93 146.965 364.776 160.818 360.3C165.478 358.8 170.031 357.27 174.478 355.71C240.218 332.62 284.218 302.51 314.168 269.84C319.248 264.31 323.931 258.713 328.218 253.05C334.777 244.429 340.734 235.368 346.048 225.93C353.383 212.816 359.543 199.079 364.458 184.88L364.728 184.1C388.558 115.36 381.308 51.5996 407.598 30.2596C519.978 -60.9704 659.888 68.9496 725.558 222.16C728.868 229.88 731.981 237.646 734.898 245.46C736.208 248.95 737.471 252.446 738.688 255.95C741.888 265.08 744.791 274.233 747.398 283.41C748.398 286.91 749.351 290.406 750.258 293.9C751.228 297.67 752.158 301.43 753.018 305.19C759.408 332.72 762.878 359.87 762.878 385.54Z" fill="#F2F2F2"/>
@@ -103,23 +101,3 @@ developerElm.insertAdjacentHTML('beforeend', `
 </clipPath>
 </defs>
 </svg>
-`)
-
-
-
-
-// const links = Array.from(document.querySelectorAll('.navigation-links a'));
-
-// links.forEach(link => {
-//     link.addEventListener('mouseover', () => {
-//         document.getElementById('right-eye').setAttribute('ry', 1);
-//         document.getElementById('right-brow').setAttribute('d', 'M 57 40 Q 61 38 64 40');
-//         document.getElementById('smile').setAttribute('d', 'M 38 62 C 43 67, 53 67, 62 59');
-//     });
-
-//     link.addEventListener('mouseout', () => {
-//         document.getElementById('right-eye').setAttribute('ry', 4);
-//         document.getElementById('right-brow').setAttribute('d', 'M 57 35 Q 61 33 64 35');
-//         document.getElementById('smile').setAttribute('d', 'M 38 62 C 43 67, 53 67, 62 62');
-//     });
-// });
