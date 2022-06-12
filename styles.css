@@ -2,10 +2,77 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.content {
+    /* display: flex; */
 }
 
 .developer-image {
+    /* width: 50%; */
+    /* width: 400px; */
 }
 
-#Head {
+.animated-role {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
 }
+
+.cursor {
+    width: 2px;
+    height: 20px;
+    background-color: grey;
+    animation: 750ms linear 0s infinite alternate blink;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* #Left_Hand {
+    transform-origin: bottom;
+    animation: 1s linear 0s infinite alternate animateHand;
+}
+
+#Right_Hand {
+    transform-origin: bottom;
+    animation: 1s linear 0s infinite alternate animateHand;
+} */
+
+#Head {
+    transform-origin: bottom;
+    animation: 1s linear 0s infinite alternate animateHead;
+}
+
+@keyframes animateHead {
+    0% {
+        transform: translateY(8px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(1deg);
+    }
+}
+
+/* @keyframes animateHand {
+    0% {
+        transform: rotate(1deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+} */
