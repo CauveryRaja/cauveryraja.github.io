@@ -29,6 +29,9 @@
     width: 2px;
     height: 20px;
     background-color: grey;
+}
+
+.blink {
     animation: 750ms linear 0s infinite alternate blink;
 }
 
@@ -61,10 +64,10 @@
 
 @keyframes animateHead {
     0% {
-        transform: translateY(8px) rotate(0deg);
+        transform: translateY(6px) rotate(0deg);
     }
     100% {
-        transform: translateY(9px) rotate(1deg);
+        transform: translateY(7px) rotate(1deg);
     }
 }
 
