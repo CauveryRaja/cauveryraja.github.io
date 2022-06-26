@@ -1,7 +1,7 @@
 import { runAfterDelay } from './utils.js';
 
-let roleElm = document.getElementsByClassName('role')[0];
-let cursorElm = document.getElementsByClassName('cursor')[0];
+const roleElm = document.getElementsByClassName('role')[0];
+const cursorElm = document.getElementsByClassName('cursor')[0];
 const INSERTION_DELAY = 400;
 const DELETION_DELAY = 200;
 

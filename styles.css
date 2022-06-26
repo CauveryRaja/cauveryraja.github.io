@@ -10,15 +10,6 @@
     flex-flow: row wrap;
 }
 
-.content {
-    /* display: flex; */
-}
-
-.developer-image {
-    /* width: 50%; */
-    /* width: 400px; */
-}
-
 .animated-role {
     display: flex;
     flex-flow: row wrap;
@@ -47,16 +38,6 @@
     }
 }
 
-/* #Left_Hand {
-    transform-origin: bottom;
-    animation: 1s linear 0s infinite alternate animateHand;
-}
-
-#Right_Hand {
-    transform-origin: bottom;
-    animation: 1s linear 0s infinite alternate animateHand;
-} */
-
 #Head {
     transform-origin: bottom;
     animation: 1s linear 0s infinite alternate animateHead;
@@ -70,12 +51,3 @@
         transform: translateY(7px) rotate(1deg);
     }
 }
-
-/* @keyframes animateHand {
-    0% {
-        transform: rotate(1deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
-} */
