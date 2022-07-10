@@ -1,0 +1,17 @@
+<svg width="346" height="102" viewBox="0 0 346 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="sun_with_clouds">
+<path id="cloud_2" d="M282.435 38.5074C257.718 35.1664 229.5 48.5261 223.094 72.6309C221.479 68.3451 218.544 64.6834 214.712 62.175C210.88 59.6665 206.35 58.4411 201.777 58.6758C197.203 58.9105 192.822 60.5932 189.267 63.4807C185.712 66.3682 183.167 70.311 182 74.7396L184.83 76.7663C237.797 88.2206 292.627 87.9727 345.489 76.0399C328.296 57.971 307.152 41.8483 282.435 38.5074Z" fill="#F0F0F0"/>
+<path id="sun" d="M182 102C210.167 102 233 79.1665 233 51C233 22.8335 210.167 0 182 0C153.833 0 131 22.8335 131 51C131 79.1665 153.833 102 182 102Z" fill="#FF6584"/>
+<g id="cloud_1" filter="url(#filter0_b_111_2)">
+<path d="M100.435 15.5074C75.718 12.1664 47.4997 25.5261 41.0935 49.6309C39.4791 45.3451 36.5439 41.6834 32.7122 39.1749C28.8804 36.6665 24.3504 35.4411 19.7766 35.6758C15.2027 35.9105 10.8219 37.5931 7.26703 40.4807C3.71215 43.3682 1.16726 47.311 0 51.7396L2.82971 53.7663C55.7972 65.2206 110.627 64.9727 163.489 53.0399C146.296 34.971 125.152 18.8483 100.435 15.5074Z" fill="#F0F0F0"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_b_111_2" x="-4" y="11" width="171.489" height="55.1771" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImage" stdDeviation="2"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_111_2"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_111_2" result="shape"/>
+</filter>
+</defs>
+</svg>
