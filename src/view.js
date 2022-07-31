@@ -36,13 +36,13 @@ function clearLastChar() {
 function highlightKeys(char) {
     let keys = getKeys(char);
     keys.forEach(key => {
-        document.getElementById(key).style.fill = '#6C63FF';
+        document.getElementById(key).style.fill = '#FB7373';
         runAfterDelay(() => document.getElementById(key).style.fill = 'white', INSERTION_DELAY);
     });
 }
 
 function highlightBackspace() {
-    document.getElementById('Key_Backspace').style.fill = '#6C63FF';
+    document.getElementById('Key_Backspace').style.fill = '#FB7373';
     runAfterDelay(() => document.getElementById('Key_Backspace').style.fill = 'white', DELETION_DELAY);
 }
 
@@ -57,9 +57,10 @@ function getKeys(char) {
 }
 
 export default {
-    loadImages: function(DEVELOPER, CANVAS) {
+    loadImages: function(DEVELOPER, CLOUD) {
         document.getElementsByClassName('developer-img')[0].insertAdjacentHTML('beforeend', DEVELOPER);
-        document.getElementsByClassName('canvas-img')[0].insertAdjacentHTML('beforeend', CANVAS);
+        const clouds = Array.from(document.getElementsByClassName('cloud'));
+        clouds.forEach(elm => elm.insertAdjacentHTML('beforeend', CLOUD));
     },
     renderStrings: async function(strings) {
         for (let i = 0; i < strings.length; i++) {
