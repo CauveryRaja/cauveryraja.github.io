@@ -1,8 +1,8 @@
-import { DEVELOPER, CANVAS, DEV_UNDER_TREE, SUN_WITH_CLOUDS } from "./constants/images.js";
+import { DEV_UNDER_TREE, CLOUD } from "./constants/images.js";
 import view from './src/view.js';
 import model from './src/model.js';
 
-view.loadImages(DEV_UNDER_TREE, SUN_WITH_CLOUDS);
+view.loadImages(DEV_UNDER_TREE, CLOUD);
 
 (async function renderStringsInLoop(strings) {
     await view.renderStrings(strings);
