@@ -2,8 +2,9 @@ import { runAfterDelay } from './utils.js';
 
 const roleElm = document.getElementsByClassName('role')[0];
 const cursorElm = document.getElementsByClassName('cursor')[0];
-const INSERTION_DELAY = 400;
+const INSERTION_DELAY = 300;
 const DELETION_DELAY = 200;
+const HIGHLIGHT_COLOR = 'url(#keyGradient)'
 
 async function renderString(str) {
     cursorElm.classList.add('blink');
@@ -36,13 +37,13 @@ function clearLastChar() {
 function highlightKeys(char) {
     let keys = getKeys(char);
     keys.forEach(key => {
-        document.getElementById(key).style.fill = '#FB7373';
+        document.getElementById(key).style.fill = HIGHLIGHT_COLOR;
         runAfterDelay(() => document.getElementById(key).style.fill = 'white', INSERTION_DELAY);
     });
 }
 
 function highlightBackspace() {
-    document.getElementById('Key_Backspace').style.fill = '#FB7373';
+    document.getElementById('Key_Backspace').style.fill = HIGHLIGHT_COLOR;
     runAfterDelay(() => document.getElementById('Key_Backspace').style.fill = 'white', DELETION_DELAY);
 }
 
