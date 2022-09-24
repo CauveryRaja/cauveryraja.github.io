@@ -5,34 +5,63 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+html {
+    height: 100%;
+}
+
 body {
-  background-color: rgb(255, 248, 248);
+  height: 100%;
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='87' height='50.232' patternTransform='scale(3) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(187, 13%, 93%, 1)'/><path d='M0 54.424l14.5-8.373c4.813 2.767 9.705 5.573 14.5 8.37l14.5-8.373V29.303M0 4.193v16.744l-14.5 8.373L0 37.68l14.5-8.374V12.562l29-16.746m43.5 58.6l-14.5-8.37v-33.49c-4.795-2.797-9.687-5.603-14.5-8.37m43.5 25.111L87 37.67c-4.795-2.797-24.187-13.973-29-16.74l-14.5 8.373-14.5-8.37v-33.489m72.5 8.365L87 4.183l-14.5-8.37M87 4.183v16.745L58 37.673v16.744m0-66.976V4.185L43.5 12.56c-4.795-2.797-24.187-13.973-29-16.74L0 4.192l-14.5-8.37m29 33.484c4.813 2.767 9.705 5.573 14.5 8.37V54.42'  stroke-linecap='square' stroke-width='0.5' stroke='hsla(187, 100%, 42%, 0.23)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
 }
 
 .container {
     display: flex;
     flex-flow: row wrap;
+    height: 100%;
 }
 
 .banner {
-    width: 55%;
-    padding: 20px;
+    position: relative;
+    flex: 1 0 auto;
+    width: 50%;
+    background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='87' height='50.232' patternTransform='scale(3) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(187, 100%, 42%, 1)'/><path d='M0 54.424l14.5-8.373c4.813 2.767 9.705 5.573 14.5 8.37l14.5-8.373V29.303M0 4.193v16.744l-14.5 8.373L0 37.68l14.5-8.374V12.562l29-16.746m43.5 58.6l-14.5-8.37v-33.49c-4.795-2.797-9.687-5.603-14.5-8.37m43.5 25.111L87 37.67c-4.795-2.797-24.187-13.973-29-16.74l-14.5 8.373-14.5-8.37v-33.489m72.5 8.365L87 4.183l-14.5-8.37M87 4.183v16.745L58 37.673v16.744m0-66.976V4.185L43.5 12.56c-4.795-2.797-24.187-13.973-29-16.74L0 4.192l-14.5-8.37m29 33.484c4.813 2.767 9.705 5.573 14.5 8.37V54.42'  stroke-linecap='square' stroke-width='0.5' stroke='hsla(174, 100%, 29%, 0.32)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+    height: 100%;
+    border-top-right-radius: 60%;
+    border-bottom-right-radius: 40%;
+}
+
+.developer-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#developer {
+    width: 600px;
+    height: 600px;
 }
 
 .content {
-    width: 45%;
+    flex: 1 0 auto;
+    width: 50%;
     position: relative;
+    height: 100%;
 }
 
 .text-content {
-    width: 100%;
-    margin-top: 5%;
     text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .greeeting {
     font-family: 'The Nautigal', cursive;
-    font-size: 70px;
+    font-size: 85px;
+    margin-bottom: 20px;
 }
 
 .animated-role {
@@ -40,13 +69,15 @@ body {
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 25px;
+    height: 30px;
+    color: rgb(1, 161, 205);
 }
 
 .cursor {
-    width: 2px;
-    height: 20px;
-    background-color: grey;
+    width: 2.5px;
+    height: 30px;
+    background-color: rgb(235, 51, 51);
 }
 
 .blink {
@@ -67,9 +98,11 @@ body {
 
 .navigation-links {
   position: absolute;
-  top: 60%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
   z-index: 2;
 }
 
@@ -84,6 +117,10 @@ body {
   margin: 15px;
   opacity: 0;
   animation: slide-in 2s ease-in forwards;
+}
+
+.navigation-links a:hover {
+    color: rgb(1, 161, 205);
 }
 
 .navigation-links a:nth-child(1) {
@@ -120,212 +157,61 @@ body {
 
 @keyframes animateHead {
     0% {
-        transform: translateY(6px) rotate(0deg);
+        transform: translateY(1px) rotate(0deg);
     }
     100% {
-        transform: translateY(7px) rotate(1deg);
+        transform: translateY(1.5px) rotate(0.5deg);
     }
 }
 
-#plant-2 {
-    transform-origin: bottom;
-    /* transform: skew(-0.06turn); */
-    transition: transform 2s;
-    /* animation: 2s linear animatePlant; */
-}
+@media screen and (max-width: 1200px) {
+    .greeeting {
+        font-size: 60px;
+    }
 
-.move {
-    /* transform: skew(-0.06turn); */
-    /* animation: 3s linear 0s animatePlant; */
-}
+    .animated-role {
+        font-size: 20px;
+    }
 
-@keyframes animatePlant {
-    0% {
-        transform: skew(0turn);
-    }
-    25% {
-        transform: skew(-0.003turn);
-    }
-    50% {
-        transform: skew(0.003turn);
-    }
-    100% {
-        transform: skew(0turn);
+    .navigation-links a {
+        font-size: 18px;
+        padding: 10px;
+        margin: 10px;
     }
 }
-/* 
-@keyframes animatePlant {
-    0% {
-        transform: translateY(7px) rotate(360deg);
+
+@media screen and (max-width: 1400px) {
+    #developer {
+        width: 500px;
+        height: 500px;
     }
-    100% {
-        transform: translateY(7px) rotate(350deg);
+}
+
+@media screen and (max-width: 1200px) {
+    #developer {
+        width: 400px;
+        height: 400px;
     }
-} */
+}
 
-.sun {
-    margin: 30px;
-    position: relative;
-    left: 40%;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: linear-gradient(rgb(249, 139, 21), #f8bb05);
-  }
-  
-  .sun:before,
-  .sun:after {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, orange, yellow, rgb(250, 166, 10));
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    background-size: 400%;
-    z-index: -1;
-    animation: sun 20s linear infinite;
-  }
-  
-  @keyframes sun {
-    0% {
-      background-position: 0 0;
+@media screen and (max-width: 900px) {
+    .container {
+        flex-direction: column-reverse;
     }
-    50% {
-      background-position: 400% 0;
+
+    .banner {
+        display: none;
     }
-    100% {
-      background-position: 0 0;
+
+    .content {
+        width: 100%;
+        background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='87' height='50.232' patternTransform='scale(3) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(187, 100%, 42%, 1)'/><path d='M0 54.424l14.5-8.373c4.813 2.767 9.705 5.573 14.5 8.37l14.5-8.373V29.303M0 4.193v16.744l-14.5 8.373L0 37.68l14.5-8.374V12.562l29-16.746m43.5 58.6l-14.5-8.37v-33.49c-4.795-2.797-9.687-5.603-14.5-8.37m43.5 25.111L87 37.67c-4.795-2.797-24.187-13.973-29-16.74l-14.5 8.373-14.5-8.37v-33.489m72.5 8.365L87 4.183l-14.5-8.37M87 4.183v16.745L58 37.673v16.744m0-66.976V4.185L43.5 12.56c-4.795-2.797-24.187-13.973-29-16.74L0 4.192l-14.5-8.37m29 33.484c4.813 2.767 9.705 5.573 14.5 8.37V54.42'  stroke-linecap='square' stroke-width='0.5' stroke='hsla(174, 100%, 29%, 0.32)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+        height: 100%;
+        border-top-right-radius: 60%;
+        border-bottom-right-radius: 40%;
     }
-  }
-  
-  .sun:after {
-    filter: blur(20px) ;
-  }
 
-  .cloud {
-    position: absolute;
-    width: 200px;
-    height: 150px;
-    opacity: 0.5;
-  }
-
-  .cloud-left {
-    top: 50px;
-    left: 20%;
-  }
-
-  .cloud-right {
-    top: 40px;
-    right: 15%;
-  }
-/* 
-  .frame {
-    border: solid 5vmin #eee;
-    border-bottom-color:#fff;
-    border-left-color:#eee;
-    border-radius:2px;
-    border-right-color:#eee;
-    border-top-color:#ddd;
-    box-shadow:0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);
-    width: 100vw;
-    height: 100vh;
-    position:relative;
-    text-align:center;
-  }
-
-  .frame::before {
-    border-radius:2px;
-    bottom:-2vmin;
-    box-shadow:0 2px 5px 0 rgba(0,0,0,.25) inset;
-    content:"";
-    left:-2vmin;
-    position:absolute;
-    right:-2vmin;
-    top:-2vmin;
-  }
-
-  .frame::after {
-    border-radius:2px;
-    bottom:-2.5vmin;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,.25);
-    content:"";
-    left:-2.5vmin;
-    position:absolute;
-    right:-2.5vmin;
-    top:-2.5vmin;
-  } */
-
-
-  .frame {
-    border: solid 5vmin rgb(251, 189, 135);
-    border-radius:2px;
-    border-left-color: rgb(251, 189, 135);
-    border-right-color: rgb(251, 189, 135);
-    border-top-color: rgb(247, 202, 163);
-    border-bottom-color: rgb(251, 189, 135);
-    box-shadow:0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);
-    width: 100vw;
-    height: 100vh;
-    position:relative;
-    text-align:center;
-    z-index: 1;
-  }
-
-  .frame::before {
-    border-radius:2px;
-    box-shadow:0 2px 5px 0 rgba(0,0,0,.25) inset;
-    content:"";
-    position:absolute;
-    right:-2vmin;
-    top:-2vmin;
-    bottom:-2vmin;
-    left:-2vmin;
-  }
-
-  .frame::after {
-    border-radius:2px;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,.25);
-    content:"";
-    left:-2.5vmin;
-    position:absolute;
-    right:-2.5vmin;
-    top:-2.5vmin;
-    bottom:-2.5vmin;
-  }
-
-  #flower_plant {
-    transform-origin: bottom;
-    /* transition: transform 1s; */
-    animation: moveFlowerPlant 700ms linear 0s infinite alternate;
-  }
-
-  @keyframes moveFlowerPlant {
-    0% {
-      transform: skew(0deg, 0deg);
+    .animated-role {
+        color: rgb(230, 230, 230);
     }
-    100% {
-      transform: skew(10deg, 0deg);
-    }
-  }
-
-  .move {
-    /* transform: rotate(90deg); */
-    transform: rotateY(10deg) rotateX(20deg);
-  }
-
-  #leaf_1_2, #leaf_2_2 {
-    transform-origin: bottom;
-    /* transition: transform 1s; */
-    animation: movePlant 1s linear 0s infinite alternate;
-  }
-
-  @keyframes movePlant {
-    0% {
-      transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) skew(0deg, 0deg);
-    }
-    100% {
-      transform: rotateY(10deg) rotateX(15deg) skew(20deg, 1deg);
-    }
-  }
+}
