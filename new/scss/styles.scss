@@ -10,7 +10,8 @@ html, body {
 }
 
 body {
-    background: linear-gradient(to bottom, black, rgb(2, 150, 169));
+    background: linear-gradient(to bottom, black, rgb(2, 150, 169)); // bluish
+    // background: linear-gradient(to bottom, black, rgba(243, 14, 209, 0.686)); // pink - looks good too
     // background-color: black;
 }
 
@@ -56,10 +57,33 @@ body {
     @include star-content(yellow, 3, 100, 1, 0.5)
 }
 
-.shooting-stars {
-    width: 2px;
-    height: 2px;
-    background-color: white;
+@mixin shooting-star-content($color, $size, $duration, $delay) {
+    width: unquote('#{$size}px');
+    height: unquote('#{$size}px');
+    background-color: $color;
+    border-radius: 50%;
+    animation: move unquote('#{$duration}s') unquote('#{$delay}s') linear infinite forwards;
+
+    &:after {
+        content: '';
+        display: block;
+        width: 5px;
+        height: 100px;
+        background: linear-gradient(to bottom, transparent, $color);
+        opacity: 0.5;
+        transform: translate(-2px, -100px) rotate(-45deg);
+        transform-origin: bottom;
+    }
+}
+
+.shooting-star-white {
+    @include shooting-star-content(white, 5, 4, 0);
+}
+.shooting-star-purple {
+    @include shooting-star-content(rgb(251, 17, 173), 6, 6, 1);
+}
+.shooting-star-yellow {
+    @include shooting-star-content(rgb(251, 185, 3), 7, 6, 0.5);
 }
 
 @keyframes shine {
@@ -68,5 +92,14 @@ body {
     }
     15%, 60%, 84%, 100% {
         opacity: 0;
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(70vw, 100vh);
     }
 }
