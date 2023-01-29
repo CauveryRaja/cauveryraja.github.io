@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(to bottom, black, rgb(2, 150, 169));
+    // background-color: black;
+}
+
+@function generate-stars($width, $height, $density, $color, $delay) {
+    $stars: '#{random($width)}px #{random($height)}px 0.5px 0.5px #{$color}';
+
+    @for $i from 2 to $density {
+        $stars: '#{$stars}, #{random($width)}px #{random($height)}px 0.5px 0.5px #{$color}';
+    }
+
+    @return unquote($stars);
+}
+
+@mixin star-content($color, $size, $density, $duration, $delay) {
+    width: unquote('#{$size}px');
+    height: unquote('#{$size}px');
+    border-radius: 50%;
+    box-shadow: generate-stars(2048, 2048, $density, $color, $duration);
+    animation: unquote('shine #{$duration + $size*0.1}s #{$delay}s ease-in-out infinite alternate');
+}
+
+.star-cluster-white-small {
+    @include star-content(white, 2, 400, 5, 0.5)
+}
+
+.star-cluster-white-medium {
+    @include star-content(white, 3, 300, 3.5, 0.1)
+}
+
+.star-cluster-white-large {
+    @include star-content(white, 4, 50, 3, 0.2)
+}
+
+.star-cluster-red {
+    @include star-content(red, 2, 50, 4, 0.5)
+}
+
+.star-cluster-purple {
+    @include star-content(rgb(191, 0, 255), 2, 50, 3, 0.8)
+}
+
+.star-cluster-yellow {
+    @include star-content(yellow, 3, 100, 1, 0.5)
+}
+
+.shooting-stars {
+    width: 2px;
+    height: 2px;
+    background-color: white;
+}
+
+@keyframes shine {
+    0%, 28%, 45%, 76%, 95% {
+        opacity: 1;
+    }
+    15%, 60%, 84%, 100% {
+        opacity: 0;
+    }
+}
