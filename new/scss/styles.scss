@@ -58,6 +58,9 @@ body {
 }
 
 @mixin shooting-star-content($color, $size, $duration, $delay) {
+    position: absolute;
+    top: -20px;
+    left: -20px;
     width: unquote('#{$size}px');
     height: unquote('#{$size}px');
     background-color: $color;
@@ -80,10 +83,12 @@ body {
     @include shooting-star-content(white, 5, 4, 0);
 }
 .shooting-star-purple {
-    @include shooting-star-content(rgb(251, 17, 173), 6, 6, 1);
+    @include shooting-star-content(white, 6, 6, 1);
+    // @include shooting-star-content(rgb(251, 17, 173), 6, 6, 1);
 }
 .shooting-star-yellow {
-    @include shooting-star-content(rgb(251, 185, 3), 7, 6, 0.5);
+    @include shooting-star-content(white, 7, 6, 0.5);
+    // @include shooting-star-content(rgb(251, 185, 3), 7, 6, 0.5);
 }
 
 @keyframes shine {
@@ -97,9 +102,9 @@ body {
 
 @keyframes move {
     0% {
-        transform: translate(0, 0);
+        transform: translate(-20px, -20px);
     }
     100% {
-        transform: translate(70vw, 100vh);
+        transform: translate(70vw, 110vh);
     }
 }
