@@ -2,6 +2,8 @@
 section.landing {
     width: 100vw;
     height: 100vh;
+    position: relative;
+    overflow: hidden;
     // background: linear-gradient(to bottom, black, rgba(186, 14, 160, 0.686)); // purple
 
     background: linear-gradient(to bottom, black, rgb(2, 150, 169)); // blue
