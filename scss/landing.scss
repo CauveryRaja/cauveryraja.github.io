@@ -10,6 +10,33 @@ section.landing {
     // background: linear-gradient(to bottom, black, rgba(186, 14, 160, 0.686)); // purple
 
     background: linear-gradient(to bottom, black, rgb(2, 150, 169)); // blue
+
+    &::before {
+        position: absolute;
+        left: 0;
+        bottom: -20px;
+        content: '';
+        display: block;
+        width: 80%;
+        height: 120px;
+        background-color: aliceblue;
+        opacity: 0.3;
+        border-radius: 100%;
+    }
+
+    &::after {
+        position: absolute;
+        right: 0;
+        bottom: -50px;
+        content: '';
+        display: block;
+        width: 80%;
+        height: 150px;
+        background-color: aliceblue;
+        opacity: 0.5;
+        border-radius: 100%;
+        transform: rotate(-15deg);
+    }
 }
 
 @function generate-stars($width, $height, $density, $color, $delay) {
@@ -169,7 +196,6 @@ svg text {
 }
 
 .svg-smiley {
-    // margin-left: -10px;
     stroke: white;
     animation: fade-in 2s ease-in;
 }
@@ -363,10 +389,10 @@ svg text {
     }
     60% {
         opacity: 1;
-        transform: scaleY(1) translateY(-80%);
+        transform: scaleY(1) translateY(-100%);
     }
     61% {
-        transform: scaleY(0.8) translateY(-80%);
+        transform: scaleY(0.8) translateY(-100%);
     }
     100% {
         opacity: 1;
