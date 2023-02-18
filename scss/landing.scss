@@ -1,9 +1,12 @@
 // Bcckground - Star clusters and shooting stars
 section.landing {
     width: 100vw;
-    height: 100vh;
+    height: 95vh;
     position: relative;
     overflow: hidden;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 90%;
+
     // background: linear-gradient(to bottom, black, rgba(186, 14, 160, 0.686)); // purple
 
     background: linear-gradient(to bottom, black, rgb(2, 150, 169)); // blue
@@ -140,230 +143,6 @@ svg text {
     animation: stroke-animation 3s forwards;
 }
 
-.svg-smiley {
-    // margin-left: -10px;
-    stroke: white;
-    animation: fade-in 2s ease-in;
-}
-
-.bio {
-    margin: 20px;
-    color: rgb(190, 190, 190);
-    animation: fade-in 2s ease-in;
-}
-
-.bio-new {
-    margin: 30px;
-    color: rgb(250, 250, 250);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    overflow: hidden;
-
-    .bio-item {
-        position: relative;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        .bar {
-            position: absolute;
-            top: 0;
-            background-color: white;
-            width: 100%;
-            height: 3px;
-        }
-
-        .role {
-            margin: 0px 30px;
-
-            @media screen and (max-width: 500px) {
-                margin: 0px 10px;
-            }
-        }
-    }
-
-    .bio-item:nth-of-type(1) {
-        .bar {
-            transform-origin: right;
-            animation: bar-animation 1s 2s ease-out forwards;
-        }
-
-        .role {
-            transform: translateY(-50px);
-            animation: role-slide-down 1s 1s ease-in forwards;
-        }
-    }
-
-    .bio-item:nth-of-type(2) {
-        .bar {
-            transform-origin: right;
-            animation: bar-slide-down 0.5s 1s ease-out forwards, bar-slide-down-after 1s 2s ease-out forwards;
-        }
-
-        .role {
-            transform: translateY(50px);
-            animation: role-slide-up 1s 1s ease-in forwards;
-        }
-    }
-
-    .bio-item:nth-of-type(3) {
-        .bar {
-            transform-origin: left;
-            animation: bar-animation 1s 2s ease-out forwards;
-        }
-
-        .role {
-            transform: translateY(-50px);
-            animation: role-slide-down 1s 1s ease-in forwards;
-        }
-    }
-
-
-    .divider-1 {
-        width: 3px;
-        height: 50px;
-        background-color: white;
-        position: relative;
-        transform: scaleY(0.06);
-        transform-origin: top;
-        animation: divider-scale 0.5s 1s ease-out forwards;
-
-        &::before {
-            content: '';
-            display: block;
-            position: absolute;
-            left: -80px;
-            width: 80px;
-            height: 3px;
-            background-color: white;
-        }
-
-        &::after {
-            content: '';
-            display: block;
-            position: absolute;
-            bottom: 0;
-            width: 20px;
-            height: 3px;
-            background-color: white;
-        }
-    }
-
-    .divider-2 {
-        width: 3px;
-        height: 50px;
-        background-color: white;
-        position: relative;
-        transform: scaleY(0.06);
-        transform-origin: top;
-        animation: divider-scale 0.5s 1s ease-out forwards;
-
-        &::before {
-            content: '';
-            display: block;
-            position: absolute;
-            left: 0;
-            width: 30px;
-            height: 3px;
-            background-color: white;
-        }
-
-        &::after {
-            content: '';
-            display: block;
-            position: absolute;
-            left: -120px;
-            bottom: 0;
-            width: 120px;
-            height: 3px;
-            background-color: white;
-        }
-    }
-
-}
-
-@keyframes bar-slide-down {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(47px);
-    }
-}
-
-@keyframes bar-slide-down-after {
-    0% {
-        transform: translateY(47px) scaleX(1);
-    }
-    100% {
-        transform: translateY(47px) scaleX(0);
-    }
-}
-
-@keyframes bar-animation {
-    0% {
-        transform: scaleX(1);
-    }
-    100% {
-        transform: scaleX(0);
-    }
-}
-
-@keyframes role-slide-down {
-    0% {
-        transform: translateY(-50px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-@keyframes role-slide-up {
-    0% {
-        transform: translateY(50px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-@keyframes divider-scale {
-    0% {
-        transform: scaleY(0.06);
-    }
-    100% {
-        transform: scaleY(1);
-    }
-}
-
-
-.navigation-links a {
-    text-decoration: none;
-    padding: 15px;
-    border-radius: 50%;
-    border: 1px solid rgb(204, 204, 204);
-    color: white;
-    font-size: 26px;
-    margin: 20px;
-    opacity: 0;
-    animation: slide-in 2s ease-in forwards;
-}
-
-.navigation-links a:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.navigation-links a:nth-child(2) {
-    animation-delay: 0.3s;
-}
-
-.navigation-links a:nth-child(3) {
-    animation-delay: 0.6s;
-}
-
 @keyframes stroke-animation {
     0%   {
         stroke: white;
@@ -389,6 +168,157 @@ svg text {
 	}
 }
 
+.svg-smiley {
+    // margin-left: -10px;
+    stroke: white;
+    animation: fade-in 2s ease-in;
+}
+
+.bio {
+    margin: 30px 0;
+    color: rgb(190, 190, 190);
+    animation: fade-in 2s ease-in;
+}
+
+.bio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .divider {
+        position: relative;
+        display: block;
+        width: 3px;
+        height: 40px;
+        background-color: white;
+        transform: rotate(-90deg) scaleY(0);
+        animation: divider-spin 1s 2s ease-in-out forwards;
+    }
+
+    @mixin divider-wings($position, $leftWidth, $rightWidth) {
+        position: absolute;
+        @if $position == 'top' {
+            top: 0;
+        }
+        @else {
+            bottom: 0;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            display: block;
+            width: $leftWidth;
+            height: 3px;
+            background-color: white;
+            transform: scaleX(0);
+            transform-origin: right;
+            animation: divider-scale 1s 3s ease-in forwards;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            display: block;
+            width: $rightWidth;
+            height: 3px;
+            background-color: white;
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: divider-scale 1s 3s ease-in forwards;
+        }
+    }
+
+    .divider:nth-of-type(1) {
+        .divider--top {
+            @include divider-wings('top', 30px, 50px)
+        }
+        .divider--bottom {
+            @include divider-wings('bottom', 80px, 120px)
+        }
+    }
+
+    .divider:nth-of-type(2) {
+        .divider--top {
+            @include divider-wings('top', 80px, 80px)
+        }
+        .divider--bottom {
+            @include divider-wings('bottom', 20px, 40px)
+        }
+    }
+
+    .bio-item {
+        color: rgb(244, 244, 244);
+        overflow: hidden;
+
+        .role {
+            padding: 20px;
+        }
+    }
+
+    .bio-item:nth-of-type(1) {
+        .role {
+            transform: translateX(100%);
+            animation: role-slide-left 0.5s 3s ease-in forwards;
+        }
+    }
+
+    .bio-item:nth-of-type(2) {
+        .role {
+            opacity: 0;
+            animation: fade-in 0.5s 3s ease-in forwards;
+        }
+    }
+
+    .bio-item:nth-of-type(3) {
+        .role {
+            transform: translateX(-100%);
+            animation: role-slide-right 0.5s 3s ease-in forwards;
+        }
+    }
+}
+
+@keyframes divider-spin {
+    0% {
+        transform: rotate(-90deg) scaleY(0);
+    }
+    50% {
+        transform: rotate(-90deg) scaleY(1);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes divider-scale {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes role-slide-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes role-slide-right {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
 @keyframes fade-in {
     0% {
         opacity: 0;
@@ -398,19 +328,59 @@ svg text {
     }
 }
 
+.navigation-links a {
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 50%;
+    border: 1px solid rgb(204, 204, 204);
+    color: white;
+    font-size: 26px;
+    margin: 20px;
+    opacity: 0;
+    animation: slide-in 1s ease-in forwards;
+
+    &:hover {
+        color: rgb(128, 199, 253);
+    }
+}
+
+.navigation-links a:nth-child(1) {
+    animation-delay: 4s;
+}
+
+.navigation-links a:nth-child(2) {
+    animation-delay: 4.3s;
+}
+
+.navigation-links a:nth-child(3) {
+    animation-delay: 4.6s;
+}
+
 @keyframes slide-in {
     0% {
         opacity: 0;
-        transform: translateY(100%);
+        transform: translateY(300%);
+    }
+    60% {
+        opacity: 1;
+        transform: scaleY(1) translateY(-80%);
+    }
+    61% {
+        transform: scaleY(0.8) translateY(-80%);
     }
     100% {
         opacity: 1;
-        transform: translateY(0%);
+        transform: scaleY(1) translateY(0%);
     }
 }
 
 
 @media screen and (max-width: 500px) {
+    section.landing {
+        border-bottom-left-radius: 40%;
+        border-bottom-right-radius: 70%;
+    }
+    
     .svg-text {
         padding: 0 20px;
     }
