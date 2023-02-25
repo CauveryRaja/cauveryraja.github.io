@@ -363,10 +363,32 @@ svg text {
     font-size: 26px;
     margin: 20px;
     opacity: 0;
-    animation: slide-in 1s ease-in forwards;
+    animation: slide-up 1s ease-in forwards;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    text-decoration: unset;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(230, 230, 230);
+        transform: translateY(-100%);
+        transition: transform 100ms ease-in;
+    }
 
     &:hover {
-        color: rgb(128, 199, 253);
+        color: rgb(2, 150, 169);
+
+        &::after {
+            transform: translateY(0);
+        }
     }
 }
 
@@ -382,7 +404,7 @@ svg text {
     animation-delay: 4.6s;
 }
 
-@keyframes slide-in {
+@keyframes slide-up {
     0% {
         opacity: 0;
         transform: translateY(300%);
@@ -399,6 +421,8 @@ svg text {
         transform: scaleY(1) translateY(0%);
     }
 }
+
+
 
 
 @media screen and (max-width: 500px) {
