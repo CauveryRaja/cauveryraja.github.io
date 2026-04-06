@@ -8,78 +8,211 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/experience.css">
     <link rel="icon" type="image/png" href="./favicon.png">
 </head>
 <body>
-    <main>
-        <section class="landing">
-            <!-- Background - Sparking clusters & shooting stars -->
-            <div class="clusters">
-                <div class="star-cluster-white-small"></div>
-                <div class="star-cluster-white-medium"></div>
-                <div class="star-cluster-white-large"></div>
-                <div class="star-cluster-red"></div>
-                <div class="star-cluster-blue"></div>
-                <div class="star-cluster-purple"></div>
-            </div>
-            <div class="shooting-stars">
-                <div class="shooting-star-white"></div>
-                <div class="shooting-star-blue"></div>
-                <div class="shooting-star-purple"></div>
-                <!-- <div class="shooting-star-test"></div> -->
-            </div>
 
-            <!-- Content - Greeting and links -->
-            <div class="container">
-                <svg class="svg-text" width="375" height="100">
-                    <text x="10" y="50" dx="30" dy="20">
-                        Hi, I'm Raja
-                    </text>
-                </svg>
-                <svg class="svg-smiley" width="100" height="100">
-                    <g class="smiley">
-                        <!-- <circle cx="50" cy="50" r="35" stroke-width="2" style="fill: none;"/> -->
-                        <g class="eyes">
-                            <path d="M 34 35 Q 38 33 41 35" stroke-width="1" fill="transparent"/>
-                            <ellipse cx="38" cy="43" rx="4" ry="4" fill="rgb(226, 226, 226)"/>
-                            
-                            <path d="M 57 35 Q 61 33 64 35" stroke-width="1" fill="transparent" id="right-brow"/>
-                            <ellipse cx="60" cy="43" rx="4" ry="4" fill="rgb(226, 226, 226)" id="right-eye"/>
+    <!-- Nav -->
+    <nav class="site-nav" id="site-nav">
+        <a href="#hero" class="nav-logo">{ raja }</a>
+        <ul class="nav-links">
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <!-- ── Hero ──────────────────────────────────────────────────────── -->
+        <section class="hero" id="hero">
+
+            <!-- Canvas starfield (JS-driven) -->
+            <canvas class="hero__canvas" id="star-canvas"></canvas>
+
+            <!-- Centered content -->
+            <div class="hero__content">
+
+                <div class="hero__heading">
+                    <svg class="hero__name" width="400" height="90" aria-label="Hi, I'm Raja">
+                        <text x="50%" y="62" text-anchor="middle">Hi, I'm Raja</text>
+                    </svg>
+                    <svg class="hero__smiley" width="80" height="80" aria-hidden="true">
+                        <g>
+                            <path d="M 22 28 Q 27 25 32 28" stroke-width="1.5" fill="transparent"/>
+                            <ellipse cx="27" cy="36" rx="4" ry="4" fill="rgb(226,226,226)"/>
+                            <path d="M 48 28 Q 53 25 58 28" stroke-width="1.5" fill="transparent" id="right-brow"/>
+                            <ellipse cx="53" cy="36" rx="4" ry="4" fill="rgb(226,226,226)" id="right-eye"/>
+                            <path id="smile" d="M 27 54 C 33 60, 47 60, 53 54" stroke-width="2" fill="transparent"/>
                         </g>
-                        <path id="smile" d="M 38 62 C 43 67, 53 67, 62 62" stroke-width="2" fill="transparent"/>
-                    </g>
-                </svg>
-                <div class="bio">
+                    </svg>
+                </div>
+
+                <div class="hero__bio">
                     <div class="bio-item">
-                        <p class="role">Artist</p>
+                        <p class="bio-role">Artist</p>
                     </div>
-                    <span class="divider">
-                        <div class="divider--top"></div>
-                        <div class="divider--bottom"></div>
+                    <span class="bio-divider">
+                        <span class="bio-divider__top"></span>
+                        <span class="bio-divider__bottom"></span>
                     </span>
                     <div class="bio-item">
-                        <p class="role">Frontend Engineer</p>
+                        <p class="bio-role">Frontend Engineer</p>
                     </div>
-                    <span class="divider">
-                        <div class="divider--top"></div>
-                        <div class="divider--bottom"></div>
+                    <span class="bio-divider">
+                        <span class="bio-divider__top"></span>
+                        <span class="bio-divider__bottom"></span>
                     </span>
                     <div class="bio-item">
-                        <p class="role">Designer</p>
+                        <p class="bio-role">Designer</p>
                     </div>
                 </div>
-                <div class="navigation-links">
-                    <a class="fa fa-codepen" target="_blank" href="https://codepen.io/cauveryraja"></a>
-                    <a class="fa fa-github" target="_blank" href="https://github.com/CauveryRaja"></a>
-                    <a class="fa fa-linkedin" target="_blank" href="https://www.linkedin.com/in/cauvery-raja-s/"></a>
-                    <!-- <a class="fa fa-medium" target="_blank" href="https://medium.com/@cauveryraja25"></a> -->
+
+                <div class="hero__links">
+                    <a class="fa fa-codepen"  target="_blank" href="https://codepen.io/cauveryraja"              aria-label="CodePen"></a>
+                    <a class="fa fa-github"   target="_blank" href="https://github.com/CauveryRaja"              aria-label="GitHub"></a>
+                    <a class="fa fa-linkedin" target="_blank" href="https://www.linkedin.com/in/cauvery-raja-s/" aria-label="LinkedIn"></a>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ── Skills ────────────────────────────────────────────────────── -->
+        <section class="skills" id="skills">
+            <div class="skills__bg-stars"></div>
+            <div class="skills__content">
+                <div class="skills__header">
+                    <h2 class="skills__title">Technical Alchemy</h2>
+                    <p class="skills__quote">"The transmutation of complex logic into fluid user interfaces."</p>
+                </div>
+                <div class="skills__grid">
+
+                    <div class="skill-card">
+                        <div class="skill-card__icon"><i class="fa fa-code"></i></div>
+                        <h3 class="skill-card__title">Frontend</h3>
+                        <div class="skill-card__tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Vue.js</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Tailwind CSS</span>
+                            <span class="tag">SCSS</span>
+                            <span class="tag">SVG / Canvas</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-card__icon"><i class="fa fa-sitemap"></i></div>
+                        <h3 class="skill-card__title">Architecture</h3>
+                        <div class="skill-card__tags">
+                            <span class="tag">Micro Frontends</span>
+                            <span class="tag">Design Systems</span>
+                            <span class="tag">Module Federation</span>
+                            <span class="tag">Composition</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-card__icon"><i class="fa fa-wrench"></i></div>
+                        <h3 class="skill-card__title">Tooling</h3>
+                        <div class="skill-card__tags">
+                            <span class="tag">Vite</span>
+                            <span class="tag">Webpack</span>
+                            <span class="tag">Jest</span>
+                            <span class="tag">Playwright</span>
+                            <span class="tag">Storybook</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-card__icon"><i class="fa fa-database"></i></div>
+                        <h3 class="skill-card__title">Backend</h3>
+                        <div class="skill-card__tags">
+                            <span class="tag">Node.js</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">Express.js</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-card__icon"><i class="fa fa-rocket"></i></div>
+                        <h3 class="skill-card__title">DevOps</h3>
+                        <div class="skill-card__tags">
+                            <span class="tag">Docker</span>
+                            <span class="tag">Kubernetes</span>
+                            <span class="tag">CI/CD</span>
+                            <span class="tag">GitHub Actions</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
+
+        <!-- ── Experience ─────────────────────────────────────────────────── -->
+        <section class="experience" id="experience">
+            <div class="experience__bg-stars"></div>
+            <div class="experience__content">
+                <h2 class="experience__title">Mission Log</h2>
+
+                <div class="timeline">
+
+                    <div class="timeline__item timeline__item--left">
+                        <div class="timeline__phase">Alpha Phase</div>
+                        <div class="timeline__card">
+                            <h3 class="timeline__role">Lead Frontend Architect</h3>
+                            <p class="timeline__company">Current Company &middot; 2022 &ndash; Present</p>
+                            <p class="timeline__desc">Architected scalable micro-frontend systems and design system foundations. Led a team of engineers to deliver high-performance, accessible user interfaces across multiple product lines.</p>
+                        </div>
+                        <div class="timeline__node"></div>
+                    </div>
+
+                    <div class="timeline__item timeline__item--right">
+                        <div class="timeline__phase">Beta Phase</div>
+                        <div class="timeline__card">
+                            <h3 class="timeline__role">Senior Frontend Engineer</h3>
+                            <p class="timeline__company">Previous Company &middot; 2019 &ndash; 2022</p>
+                            <p class="timeline__desc">Built enterprise-grade React applications with a focus on performance and developer experience. Mentored junior engineers and established front-end best practices across teams.</p>
+                        </div>
+                        <div class="timeline__node"></div>
+                    </div>
+
+                    <div class="timeline__item timeline__item--left">
+                        <div class="timeline__phase">Genesis</div>
+                        <div class="timeline__card">
+                            <h3 class="timeline__role">UI Engineer</h3>
+                            <p class="timeline__company">First Company &middot; 2016 &ndash; 2019</p>
+                            <p class="timeline__desc">Developed immersive data visualisation components and interactive UIs. Explored the intersection of engineering and visual design, blending SVG animations with functional interfaces.</p>
+                        </div>
+                        <div class="timeline__node"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Contact ────────────────────────────────────────────────────── -->
+        <section class="contact" id="contact">
+            <div class="contact__bg-stars"></div>
+            <div class="contact__content">
+                <h2 class="contact__title">Establish Contact</h2>
+                <p class="contact__subtitle">Open to collaborations, opportunities, or just a good conversation about the web.</p>
+                <a href="mailto:cauveryraja25@gmail.com" class="contact__cta">Send a Signal</a>
+                <div class="contact__links">
+                    <a class="fa fa-codepen"  target="_blank" href="https://codepen.io/cauveryraja"              aria-label="CodePen"></a>
+                    <a class="fa fa-github"   target="_blank" href="https://github.com/CauveryRaja"              aria-label="GitHub"></a>
+                    <a class="fa fa-linkedin" target="_blank" href="https://www.linkedin.com/in/cauvery-raja-s/" aria-label="LinkedIn"></a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-
-
+    <script src="./js/stars.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./js/nav.js"></script>
 </body>
 </html>
