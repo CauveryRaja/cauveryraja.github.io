@@ -117,43 +117,48 @@
     animation: divider-spin 1s 2s ease-in-out forwards;
 }
 
+/* Wing containers — no background themselves, wings come from ::before / ::after */
 .bio-divider__top,
 .bio-divider__bottom {
     position: absolute;
     display: block;
+}
+
+.bio-divider__top    { top: 0; }
+.bio-divider__bottom { bottom: 0; }
+
+/* Both pseudo-elements share the same base */
+.bio-divider__top::before,  .bio-divider__top::after,
+.bio-divider__bottom::before, .bio-divider__bottom::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    display: block;
     height: 3px;
     background-color: white;
     transform: scaleX(0);
-    animation: wing-scale 0.8s 3s ease forwards;
+    animation: wing-scale 1s 3s ease-in forwards;
 }
 
-/* First divider wings */
-.hero__bio .bio-divider:nth-of-type(1) .bio-divider__top    { top: 0;    right: 0; width: 30px;  transform-origin: right; }
-.hero__bio .bio-divider:nth-of-type(1) .bio-divider__bottom { bottom: 0; right: 0; width: 80px;  transform-origin: right; }
-.hero__bio .bio-divider:nth-of-type(1) .bio-divider__top::after {
-    content: ''; position: absolute; left: 0; width: 50px; height: 3px;
-    background: white; transform: scaleX(0); transform-origin: left;
-    animation: wing-scale 0.8s 3s ease forwards;
-}
-.hero__bio .bio-divider:nth-of-type(1) .bio-divider__bottom::after {
-    content: ''; position: absolute; left: 0; width: 120px; height: 3px;
-    background: white; transform: scaleX(0); transform-origin: left;
-    animation: wing-scale 0.8s 3s ease forwards;
-}
+/* ::before = right wing (scales leftward from the divider) */
+.bio-divider__top::before,
+.bio-divider__bottom::before { right: 0; transform-origin: right; }
 
-/* Second divider wings */
-.hero__bio .bio-divider:nth-of-type(2) .bio-divider__top    { top: 0;    right: 0; width: 80px; transform-origin: right; }
-.hero__bio .bio-divider:nth-of-type(2) .bio-divider__bottom { bottom: 0; right: 0; width: 20px; transform-origin: right; }
-.hero__bio .bio-divider:nth-of-type(2) .bio-divider__top::after {
-    content: ''; position: absolute; left: 0; width: 80px; height: 3px;
-    background: white; transform: scaleX(0); transform-origin: left;
-    animation: wing-scale 0.8s 3s ease forwards;
-}
-.hero__bio .bio-divider:nth-of-type(2) .bio-divider__bottom::after {
-    content: ''; position: absolute; left: 0; width: 40px; height: 3px;
-    background: white; transform: scaleX(0); transform-origin: left;
-    animation: wing-scale 0.8s 3s ease forwards;
-}
+/* ::after = left wing (scales rightward from the divider) */
+.bio-divider__top::after,
+.bio-divider__bottom::after  { left: 0; transform-origin: left; }
+
+/* First divider */
+.hero__bio .bio-divider:nth-of-type(1) .bio-divider__top::before    { width: 30px; }
+.hero__bio .bio-divider:nth-of-type(1) .bio-divider__top::after     { width: 50px; }
+.hero__bio .bio-divider:nth-of-type(1) .bio-divider__bottom::before { width: 80px; }
+.hero__bio .bio-divider:nth-of-type(1) .bio-divider__bottom::after  { width: 120px; }
+
+/* Second divider */
+.hero__bio .bio-divider:nth-of-type(2) .bio-divider__top::before    { width: 80px; }
+.hero__bio .bio-divider:nth-of-type(2) .bio-divider__top::after     { width: 80px; }
+.hero__bio .bio-divider:nth-of-type(2) .bio-divider__bottom::before { width: 20px; }
+.hero__bio .bio-divider:nth-of-type(2) .bio-divider__bottom::after  { width: 40px; }
 
 @keyframes divider-spin {
     0%   { transform: rotate(-90deg) scaleY(0); }
