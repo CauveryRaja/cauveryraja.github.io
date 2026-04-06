@@ -1,0 +1,93 @@
+/* ── Stats / Flight Log ────────────────────────────────────────────────────── */
+
+.stats {
+    position: relative;
+    background: #ffffff;
+    padding: 80px 40px 100px;
+    overflow: hidden;
+}
+
+.stats__wave-top,
+.stats__wave-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    line-height: 0;
+}
+
+.stats__wave-bottom { bottom: -1px; }
+
+.stats__wave-top svg,
+.stats__wave-bottom svg {
+    display: block;
+    width: 100%;
+}
+
+.stats__content {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 0 40px;
+}
+
+.stats__bio {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.85;
+    color: rgba(3, 13, 26, 0.65);
+    font-style: italic;
+}
+
+.stats__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+    .stats__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+}
+
+.stat-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stat-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stat-item__number {
+    display: block;
+    font-size: clamp(40px, 5vw, 68px);
+    font-weight: 700;
+    color: #030d1a;
+    line-height: 1;
+    margin-bottom: 14px;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -1px;
+}
+
+.stat-item__label {
+    font-size: 11px;
+    font-weight: 700;
+    color: rgb(2, 150, 169);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+}
+
+.stat-item__sub {
+    font-size: 12px;
+    color: rgba(3, 13, 26, 0.4);
+    letter-spacing: 0.3px;
+}
