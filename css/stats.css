@@ -7,17 +7,14 @@
     overflow: hidden;
 }
 
-.stats__wave-top,
 .stats__wave-bottom {
     position: absolute;
     left: 0;
     right: 0;
+    bottom: -1px;
     line-height: 0;
 }
 
-.stats__wave-bottom { bottom: -1px; }
-
-.stats__wave-top svg,
 .stats__wave-bottom svg {
     display: block;
     width: 100%;

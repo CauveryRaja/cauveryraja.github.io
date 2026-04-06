@@ -29,7 +29,6 @@
     width: 100%;
     z-index: 1;
     overflow: visible;
-    /* padding-bottom: 80px; */
 }
 
 /* ── Name + Smiley row ───────────────────────────────────────────────────── */
@@ -222,8 +221,6 @@
 }
 
 /* ── Planet surface arcs ─────────────────────────────────────────────────── */
-
-/* ── Planet surface arcs — ::before/::after on the section (original approach) */
 
 .hero::before {
     content: '';
