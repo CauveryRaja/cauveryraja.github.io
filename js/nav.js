@@ -9,7 +9,27 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Scroll-in animations via IntersectionObserver
+// ── Active nav link on scroll ─────────────────────────────────────────────────
+
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+                link.classList.toggle(
+                    'is-active',
+                    link.getAttribute('href') === `#${entry.target.id}`
+                );
+            });
+        }
+    });
+}, { threshold: 0.4 });
+
+sections.forEach(s => sectionObserver.observe(s));
+
+// ── Scroll-in animations via IntersectionObserver
 const animatedEls = document.querySelectorAll('.skill-card, .timeline__card');
 
 const observer = new IntersectionObserver((entries) => {
